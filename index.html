@@ -116,6 +116,40 @@
       max-height: 1000px;
       transition: max-height 0.5s ease-in;
     }
+
+    /* Review Us Section Styles */
+    .review-us {
+      background: #f8f9fa;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .google-review-btn {
+      background: #ff69b4;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .google-review-btn:hover {
+      background: #d63384;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .google-review-btn img {
+      margin-right: 10px;
+      width: 30px;
+      height: 30px;
+    }
   </style>
 </head>
 
@@ -376,6 +410,28 @@
       </div>
 
     </section><!-- /Call To Action Section -->
+
+    <!-- Review Us on Google Section -->
+    <section id="review-us" class="review-us section">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Love Our Services?</h2>
+          <p>Share your experience with others on Google</p>
+        </div>
+        
+        <div class="text-center">
+          <a href="https://www.google.com/search?gs_ssp=eJzj4tFP1zc0KjQpz6gwKzFgtFI1qDBMtTQ1MzI0SLVIMU5NNUyzMqhISU42SUszS0k1TUtOTDZN8hJJyi_NS05VSMxLUUjPVyguKU3JzAcATcsXvg&q=bounce+and+go+studio&rlz=1C1JJTC_enZA1103ZA1103&oq=bounce+and+&gs_lcrp=EgZjaHJvbWUqEggBEC4YJxivARjHARiABBiKBTIGCAAQRRg8MhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYQDIGCAMQRRg5Mg0IBBAuGK8BGMcBGIAEMgcIBRAAGIAEMgYIBhBFGDwyBggHEEUYPNIBCDI5NjZqMGo5qAIAsAIB&sourceid=chrome&ie=UTF-8#lrd=0x1e956210e8d3ee1f:0xdcc4ff6de5fcac5b,3,,,," 
+             target="_blank" 
+             class="google-review-btn">
+            <img src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" 
+                 alt="Google Logo" 
+                 width="30" 
+                 height="30">
+            Write us a Review on Google
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- Reviews Slider Section -->
     <section id="reviews" class="reviews-slider section">

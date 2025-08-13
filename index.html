@@ -85,6 +85,37 @@
       font-size: 0.9em;
       margin-bottom: 15px;
     }
+
+    /* Collapsible Services Styles */
+    .service-item {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .service-item h4 {
+      position: relative;
+      padding-right: 30px;
+    }
+    .service-item h4:after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    .service-item.active h4:after {
+      content: "-";
+    }
+    .service-list {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .service-item.active .service-list {
+      max-height: 1000px;
+      transition: max-height 0.5s ease-in;
+    }
   </style>
 </head>
 
@@ -199,13 +230,12 @@
         <div class="service-item position-relative p-4 border rounded shadow-sm">
           <div class="icon mb-2"><i class="bi bi-scissors"></i></div>
           <h4>Hair</h4>
-          <ul class="mb-0">
-            <li>Hair Perming, Cutting,Relaxer,Silk Press</li>
-			  <li>Colouring,Highlights,Blow Drying,Keratin Treatment</li>
-			  <li>Extension Installation,&nbsp; &nbsp; &nbsp; Micro bonding, Braiding</li>
-			  <li>Botox Hair Treatment,Brazilian Treatment</li>
+          <ul class="service-list mb-0">
+            <li>Hair Perming, Cutting, Relaxer, Silk Press</li>
+            <li>Colouring, Highlights, Blow Drying, Keratin Treatment</li>
+            <li>Extension Installation, Micro bonding, Braiding</li>
+            <li>Botox Hair Treatment, Brazilian Treatment</li>
             <li>Matrix Dance Package (Combo)</li>
-			  
           </ul>
         </div>
       </div>
@@ -215,46 +245,45 @@
         <div class="service-item position-relative p-4 border rounded shadow-sm">
           <div class="icon mb-2"><i class="bi bi-droplet"></i></div>
           <h4>Skin & Body</h4>
-          <ul class="mb-0">
+          <ul class="service-list mb-0">
             <li>Dermaplaning, Algae Treatments, Chemical Peels</li>
             <li>Slimming Injections</li>
             <li>Tag removal</li>
-			<li>Make Up(By appointment)</li>
+            <li>Make Up (By appointment)</li>
           </ul>
         </div>
       </div>
-<!-- Nails -->
+      
+      <!-- Nails -->
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <div class="service-item position-relative p-4 border rounded shadow-sm">
           <div class="icon mb-2"><i class="bi bi-droplet"></i></div>
           <h4>Nails (manicure and pedicure)</h4>
-          <ul class="mb-0">
+          <ul class="service-list mb-0">
             <li>Manicure, Pedicure</li>
             <li>Acrylic, Gel Overlay</li>
             <li>Foot Peel</li>
           </ul>
         </div>
       </div>
+      
       <!-- Brows -->
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
         <div class="service-item position-relative p-4 border rounded shadow-sm">
           <div class="icon mb-2"><i class="bi bi-eyedropper"></i></div>
           <h4>Lash & Brows</h4>
-          <ul class="mb-0">
-            <li>Lash Installation, CLassics, Hybrid volume and mega volume</li>
-			 <li>Lash training + Kit (attendance Certificate)</li>
-			<li> Brow Tinting & Threading</li>
+          <ul class="service-list mb-0">
+            <li>Lash Installation, Classics, Hybrid volume and mega volume</li>
+            <li>Lash training + Kit (attendance Certificate)</li>
+            <li>Brow Tinting & Threading</li>
             <li>Microblading, Micro shading</li>
-			 <li>Eye liner, lip shading</li>
-			  <li> Brow Tinting &amp; Threading, Waxing and sugaring.</li>
-            <li>Brow Waxing(Sugaring,Brow Installation</li>
+            <li>Eye liner, lip shading</li>
+            <li>Brow Tinting & Threading, Waxing and sugaring</li>
+            <li>Brow Waxing (Sugaring, Brow Installation)</li>
             <li>Brow Tweezing</li>
-			 
           </ul>
         </div>
       </div>
-
-      
 
     </div>
   </div>
@@ -543,6 +572,15 @@
             spaceBetween: 40
           }
         }
+      });
+
+      // Collapsible service items
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        const header = item.querySelector('h4');
+        header.addEventListener('click', () => {
+          item.classList.toggle('active');
+        });
       });
     });
   </script>
